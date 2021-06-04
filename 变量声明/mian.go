@@ -32,7 +32,8 @@ func main() {
 	isOK = false
 
 	// go语言中的变量声明了必须使用，否则无法编译
-	fmt.Print(isOK)              //
+	fmt.Print(isOK)              // 打印指定内容
+	fmt.Println()                // 打印一个空行
 	fmt.Printf("name: %s", name) // %s 占位符，使用name变量值去替换占位符
 	fmt.Println(age)             // %d 十进制 int 类型
 
