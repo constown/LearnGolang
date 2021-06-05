@@ -17,4 +17,6 @@ func main() {
 	fmt.Printf("字符串：%v\n", n)  // 查看变量的值
 	fmt.Printf("字符串：%#v\n", n) // 查看变量的值 （加个双引号）
 
+	//	fmt.Printf("%c", n) c 查看字符
+
 }
