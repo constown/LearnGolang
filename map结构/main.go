@@ -33,8 +33,18 @@ func main() {
 	delete(m1, "隐身")
 
 	// map 和 slice 组合
+	// 一定要初始化不然就会越界，以及空指针或者其他的错误
 
-	var s1 = make([]map[int]string, 0, 10)
-	s1[0][100] = "A" // 越界
+	// 元素为map类型的切片
+	var s1 = make([]map[int]string, 10, 10)
+	//s1[0][100] = "A"
+	s1[0] = make(map[int]string, 1)
+	s1[0][10] = "沙河"
 	fmt.Println(s1)
+
+	// 值为切片类型的map
+
+	var m2 = make(map[string][]int, 10)
+	m2["北京"] = []int{10, 20, 30}
+	fmt.Println(m2)
 }
