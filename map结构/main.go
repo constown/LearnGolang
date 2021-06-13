@@ -43,7 +43,6 @@ func main() {
 	fmt.Println(s1)
 
 	// 值为切片类型的map
-
 	var m2 = make(map[string][]int, 10)
 	m2["北京"] = []int{10, 20, 30}
 	fmt.Println(m2)
