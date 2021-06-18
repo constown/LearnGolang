@@ -50,6 +50,6 @@ func (m myInt) add() {
 func main() {
 	d1 := newDog("jack")
 	d1.wow()
-	m := myInt(100)
+	m := myInt(100) // 强制类型转换
 	m.add()
 }
