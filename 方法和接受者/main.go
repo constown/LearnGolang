@@ -23,7 +23,7 @@ func newDog(name string) dog {
 // 2、接收者是拷贝代价比较大的对象
 // 3、保证一致性，如果有某个方法使用你指针接收者，那么其他地方也应该使用指针接收者
 func (d dog) wow() {
-	fmt.Printf("%s: 汪汪汪", d.name)
+	fmt.Printf("%s: 汪汪汪\n", d.name)
 }
 
 func (d *dog) w() {
@@ -38,7 +38,18 @@ type Dog struct {
 	name string
 }
 
+// 给自定义类型添加方法
+// 不能给别的包的类型添加方法，只能给自己的包里面的类型添加方法
+
+type myInt int
+
+func (m myInt) add() {
+	fmt.Println("+++")
+}
+
 func main() {
 	d1 := newDog("jack")
 	d1.wow()
+	m := myInt(100)
+	m.add()
 }
