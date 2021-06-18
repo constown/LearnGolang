@@ -65,23 +65,31 @@ func deleteStudent() {
 	fmt.Println("——————————————————————————————")
 }
 
-func main() {
-	allStudents = make(map[uint64]*student, 48)
-
-	for {
-		// 1、打印菜单
-		fmt.Println("✨ 欢迎使用函数版学生管理系统管理 ✨")
-		fmt.Println(`💥 请输入序号选择你要执行的操作 💥：
+func printMenu() {
+	// 1、打印菜单
+	fmt.Println("✨ 欢迎使用函数版学生管理系统管理 ✨")
+	fmt.Println(`💥 请输入序号选择你要执行的操作 💥：
 👉1、查看所有学生
 👉2、新增学生
 👉3、删除学生
 👉4、退出
 	`)
-		fmt.Print("👌请输入你要执行的操作,按回车确定：")
+	fmt.Print("👌请输入你要执行的操作,按回车确定：")
+}
+
+func choiceMenu() int {
+	var choice int
+	fmt.Scanln(&choice)
+	fmt.Printf("✅ 你选择了【 %d 】这个选项\n", choice)
+	return choice
+}
+
+func main() {
+	allStudents = make(map[uint64]*student, 48)
+	for {
+		printMenu()
 		// 2、等待用户操作
-		var choice int
-		fmt.Scanln(&choice)
-		fmt.Printf("✅ 你选择了【 %d 】这个选项\n", choice)
+		choice := choiceMenu()
 		// 3、执行对应操作
 		switch choice {
 		case 1:
