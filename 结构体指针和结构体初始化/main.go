@@ -55,4 +55,21 @@ func main() {
 
 	// 结构体内存布局
 	// 一个结构里面的内存是连续的
+
+	jack := newPerson("lucy", 18)
+	fmt.Println(jack)
+}
+
+// 构造函数，返回的是结构体还是结构体指针？
+// 结构体比较小的时候可以返回结构体，结构体大的时候返回指针，减少程序的内存开销
+type personA struct {
+	name string
+	age  int
+}
+
+func newPerson(name string, age int) personA {
+	return personA{
+		name: name,
+		age:  age,
+	}
 }
