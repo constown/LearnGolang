@@ -7,6 +7,9 @@ import (
 // 结构体
 // 可以理解为 js中的对象？
 // 结构体里的字段是唯一的
+// 结构体是一种数据类型,一种我们可以自己造的保存多个维度数据的类型
+
+// 使用 [ type 结构体名字 struct ]来进行声明
 
 type person struct {
 	name   string
@@ -64,6 +67,7 @@ func main() {
 	s.y = 180
 	fmt.Printf("类型：%T value：%v\n", s, s)
 
+	// 结构体的匿名字段
 	p1 := personA{
 		"周宁",
 		900,
@@ -90,4 +94,11 @@ func main() {
 	}
 	fmt.Println(p3)
 	fmt.Println(p3.city) // 使用匿名嵌套结构体的时候，可以用这种语法糖
+
+	// 匿名结构体
+	var ss = struct {
+		x int
+		y int
+	}{10, 20}
+	fmt.Println("ss:", ss)
 }
