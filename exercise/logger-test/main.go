@@ -1,12 +1,12 @@
 package main
 
 import (
-	logger "LearnGolang/练习/日志库"
+	logger "LearnGolang/exercise/logger"
 )
 
 // 测试日志库
 func main() {
-	log := logger.NewLog()
+	log := logger.NewLog("debug")
 	log.Debug("这是一条Debug日志")
 	log.Info("这是一条info日志")
 	log.Waring("这是一条Waring日志")
