@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./calc"
+	"LearnGolang/package相关/calc"
 	"fmt"
 )
 
