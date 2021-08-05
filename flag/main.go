@@ -24,7 +24,7 @@ func main() {
 	married := flag.Bool("married", false, "结婚了吗")
 	marriedTime := flag.Duration("marriedTime", time.Second, "结婚了吗")
 	//	使用flag
-	flag.Parse()
+	flag.Parse() // 必须先解析后面才能使用
 	fmt.Println(*name, *age, *married, *marriedTime, hobby)
 	//	flag.Args() 返回命令行参数后面的其他参数， []string 类型
 	//	flag.NArg() 返回命令行参数后的其他参数个数
